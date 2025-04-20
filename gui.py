@@ -35,15 +35,20 @@ text3 = Entry(root, width=15)
 text3.grid(column=1, row=2)
 
 def save():
-    x = text1.get()
-    y = text2.get()
-    z = text3.get()
+    label4 = Label(root, text=('There has been an error. Please Try Again'))
 
-    x = int(x)
-    y = int(y)
-    z = int(z)
+    try:
+        x = text1.get()
+        y = text2.get()
+        z = text3.get()
 
-    main(x, y, z)
+        x = int(x)
+        y = int(y)
+        z = int(z)
+
+        main(x, y, z)
+    except:
+        label4.grid(column=0, row=5)
 
 def end():
     exit()
